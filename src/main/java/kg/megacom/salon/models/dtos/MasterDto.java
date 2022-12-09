@@ -13,6 +13,6 @@ import lombok.experimental.FieldDefaults;
 public class MasterDto {
     Long id;
     String name;
-    Integer experience;
+    String experience;
     Salon salonId;
 }

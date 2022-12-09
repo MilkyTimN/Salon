@@ -20,7 +20,7 @@ public class Master {
     @Column(name = "name")
     String name;
     @Column(name = "experience")
-    Integer experience;
+    String experience;
     @ManyToOne
     @JoinColumn(name = "salon_id")
     Salon salonId;
