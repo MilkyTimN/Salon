@@ -1,5 +1,7 @@
 package kg.megacom.salon.controllers;
 
+import io.swagger.annotations.Api;
+import kg.megacom.salon.configurations.Swagger2Configuration;
 import kg.megacom.salon.models.dtos.BookingTimeDto;
 import kg.megacom.salon.services.BookingTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("bookingTime")
+@Api(tags = Swagger2Configuration.BOOKINGTIME)
 public class BookingTimeController {
 
     private final BookingTimeService service;

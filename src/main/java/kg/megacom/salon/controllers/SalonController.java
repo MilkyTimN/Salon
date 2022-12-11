@@ -1,5 +1,7 @@
 package kg.megacom.salon.controllers;
 
+import io.swagger.annotations.Api;
+import kg.megacom.salon.configurations.Swagger2Configuration;
 import kg.megacom.salon.models.dtos.SalonDto;
 import kg.megacom.salon.services.SalonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/salon")
+@Api(tags = Swagger2Configuration.SALON)
 public class SalonController {
 
     private final SalonService service;

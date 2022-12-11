@@ -1,5 +1,8 @@
 package kg.megacom.salon.controllers;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import kg.megacom.salon.configurations.Swagger2Configuration;
 import kg.megacom.salon.models.dtos.WorkDayDto;
 import kg.megacom.salon.services.WorkDayService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/workDay")
+@Api(tags = Swagger2Configuration.WORKDAY)
 public class WorkDayController {
 
     private final WorkDayService service;
@@ -20,6 +24,7 @@ public class WorkDayController {
     }
 
     @PostMapping("/save")
+    @ApiOperation("Сохранение")
     ResponseEntity<?> saveWorkDay(@RequestBody WorkDayDto workDayDto){
         try{
             return ResponseEntity.ok(service.save(workDayDto));
@@ -29,6 +34,7 @@ public class WorkDayController {
     }
 
     @GetMapping("/getById")
+    @ApiOperation("Поиск по id")
     ResponseEntity<?> getById(@RequestParam Long id){
         try {
             return ResponseEntity.ok(service.findById(id));
@@ -38,6 +44,8 @@ public class WorkDayController {
     }
 
     @GetMapping("/getAll")
+    @ApiOperation("Вывести все")
+
     ResponseEntity<?> findAll() {
         try{
             return ResponseEntity.ok(service.getAll());
